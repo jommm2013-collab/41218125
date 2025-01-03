@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    個人網頁
+    index.html
 </head>
 <body>
 
-    <h1>個人資料</h1>
+    個人資料
 
     <div>
         <p>學號：NNNNNNN</p>
