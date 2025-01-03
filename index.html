@@ -35,12 +35,23 @@
             border-radius: 5px; /* 圓角 */
             margin-top: 20px;
             text-align: center;
+    .image-container img {
+            width: 400px;  /* 寬度400px */
+            height: 300px; /* 高度300px */
+            border: 2px solid blue; /* 藍色框線 2px */
+            border-radius: 10px; /* 圓角邊框 */
+            transition: all 1s ease; /* 添加過渡效果，使圖片大小改變時平滑過渡 */
+        }
+
+        /* 隱藏收藏圖片部分，當不顯示時 */
+        .hidden {
+            display: none;
         }
     </style>
 </head>
 <body>
 
-    <h1>個人資料</h1>
+     <h1>個人資料</h1>
 
     <div>
         <p>學號：41218125</p>
@@ -49,7 +60,41 @@
     <div>
         <p>姓名：王振宇</p>
     </div>
+ <div id="collect">
+        <h1>我的收藏</h1>
 
+        <div class="image-container">
+            <img id="collectImage" src="item1.jpg" alt="收藏物品">
+        </div>
+
+        <div>
+            <a href="javascript:void(0);" class="button-link" onclick="previousItem()">上一項收藏</a>
+            <a href="javascript:void(0);" class="button-link" onclick="nextItem()">下一項收藏</a>
+        </div>
+    </div>
+
+    <script>
+        // 定義收藏物品圖片
+        const images = [
+            "HrrJAz15 (1).JPG",  // 替換為你的實際圖片路徑
+            "https://pbs.twimg.com/media/F8jRT0VaQAAFpV0.jpg:large",  // 替換為你的實際圖片路徑
+            "https://g-search2.alicdn.com/img/bao/uploaded/i4/i4/2218245466220/O1CN01NInZKD1vooVV7owIT_!!2218245466220.jpg_360x360q90.jpg_.webp"   // 替換為你的實際圖片路徑
+        ];
+
+        let currentIndex = 0;
+
+        // 切換到上一項收藏
+        function previousItem() {
+            currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+            document.getElementById("collectImage").src = images[currentIndex];
+        }
+
+        // 切換到下一項收藏
+        function nextItem() {
+            currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+            document.getElementById("collectImage").src = images[currentIndex];
+        }
+    </script>
     <div class="photo">
         <img src="IMG_1396.JPG" alt="個人相片">
     </div>
